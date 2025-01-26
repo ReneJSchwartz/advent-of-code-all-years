@@ -7,6 +7,6 @@ Summary for the years
 - 2021: C# (19*)
 - 2022: Python (15*), C# in game engine (1*)
 - 2023: C# (9*)
-- 2024: JavaScript + Python (11*)
+- 2024: JavaScript (6*) + Python (5*)
 
 Total stars: 66*
