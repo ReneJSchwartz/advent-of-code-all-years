@@ -19,9 +19,9 @@ fun main() {
 
     for (i in 0..instructions.size - 1) {
         val dir = instructions[i][0];
-		var num = instructions[i].substring(1).toInt()	
+	var num = instructions[i].substring(1).toInt()	
 
-		if (dir === 'R') {
+	if (dir === 'R') {
             dirIndex++
         }
         else if (dir === 'L') {
