@@ -1,16 +1,16 @@
 fun main() {
     // --- Day 1: No Time for a Taxicab ---
     // How many blocks away is Easter Bunny HQ?
-	  // You first face north and then get directions
-	  // that turn you to some dir and then you walk
+    // You first face north and then get directions
+    // that turn you to some dir and then you walk
     // for example 5 blocks to that dir
     // when all instructions are given how far away
     // Easter Bunny HQ is from the starting point?
 
     val cardinalDirs = arrayOf("N", "E", "S", "W")
     var dirIndex = 100;
-	  println("curDir: " + cardinalDirs[dirIndex % 4])
-	  println(cardinalDirs.joinToString())
+    println("curDir: " + cardinalDirs[dirIndex % 4])
+    println(cardinalDirs.joinToString())
     
     val instructions = "R5, L5, R5, R3".split(", ")
     println(instructions)
