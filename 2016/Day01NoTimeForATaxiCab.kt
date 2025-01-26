@@ -16,6 +16,8 @@ fun main() {
     println(instructions)
     var x = 0
     var y = 0
+    // Part 2 ans is the first location visited twice
+    var visitedLocations = HashMap<String, Int> ()
 
     for (i in 0..instructions.size - 1) {
         val dir = instructions[i][0];
@@ -29,16 +31,51 @@ fun main() {
         }
         
         if (cardinalDirs[dirIndex % 4] === "N") {
-            y += num
+	    // Save every visited location and not just the destination
+            for (i in 1..num) {
+                y++;
+				visitedLocations["$y $x"] = visitedLocations.getOrDefault("$y $x", 0) + 1
+        
+                if (visitedLocations.get("$y $x") == 2) {
+                    println("P2: y$y/x$x")
+                    return
+                }
+            }
+	    // approach for p2 won't cut it anymore
+	    // y += num
         }
         else if (cardinalDirs[dirIndex % 4] === "S") {
-            y -= num
+            for (i in 1..num) {
+                y--;
+				visitedLocations["$y $x"] = visitedLocations.getOrDefault("$y $x", 0) + 1
+        
+                if (visitedLocations.get("$y $x") == 2) {
+                    println("P2: y$y/x$x")
+                    return
+                }
+            }
         }
         else if (cardinalDirs[dirIndex % 4] === "E") {
-            x += num
+            for (i in 1..num) {
+                x++;
+				visitedLocations["$y $x"] = visitedLocations.getOrDefault("$y $x", 0) + 1
+        
+                if (visitedLocations.get("$y $x") == 2) {
+                    println("P2: y$y/x$x")
+                    return
+                }
+            }
         }
         else if (cardinalDirs[dirIndex % 4] === "W") {
-            x -= num
+            for (i in 1..num) {
+                x--;
+				visitedLocations["$y $x"] = visitedLocations.getOrDefault("$y $x", 0) + 1
+        
+                if (visitedLocations.get("$y $x") == 2) {
+                    println("P2: y$y/x$x")
+                    return
+                }
+            }
         }    
     }
     println("P1: y$y/x$x")
