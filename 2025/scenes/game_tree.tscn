@@ -139,6 +139,5 @@ texture = SubResource("NoiseTexture2D_bi5im")
 position = Vector2(0, -242)
 texture = SubResource("PlaceholderTexture2D_qfv05")
 
-[node name="Day1Part1" type="Node" parent="Levels/Day1" node_paths=PackedStringArray("combination_lock")]
+[node name="Day1Part1" type="Node" parent="Levels/Day1"]
 script = ExtResource("2_bi5im")
-combination_lock = NodePath("../CombinationLock")
