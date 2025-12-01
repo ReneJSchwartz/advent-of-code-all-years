@@ -8,5 +8,6 @@ Summary for the years
 - 2022: Python (15*), C# in game engine (1*)
 - 2023: C# (9*)
 - 2024: JavaScript (6*) + Python (5*)
+- 2025: GDScript in game engine (2*)
 
-Total stars: 70*
+Total stars: 72*
