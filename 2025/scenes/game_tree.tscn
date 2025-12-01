@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3cihtmq8kted"]
+[gd_scene load_steps=7 format=3 uid="uid://c3cihtmq8kted"]
 
 [ext_resource type="Script" uid="uid://bo3ybn1jgllqq" path="res://scripts/main_menu_manager.gd" id="1_4dfya"]
+[ext_resource type="Script" uid="uid://7ctfuq703or1" path="res://scripts/day_1_part_1.gd" id="2_bi5im"]
 
 [sub_resource type="Theme" id="Theme_c4mtj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4dfya"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bi5im"]
+noise = SubResource("FastNoiseLite_4dfya")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qfv05"]
+size = Vector2(20, 20)
 
 [node name="GameTree" type="Node"]
 
@@ -117,3 +126,19 @@ layout_mode = 2
 theme = SubResource("Theme_c4mtj")
 text = "12
 "
+
+[node name="Levels" type="Node" parent="."]
+
+[node name="Day1Part1" type="Node2D" parent="Levels"]
+position = Vector2(800, 450)
+
+[node name="CombinationLock" type="Sprite2D" parent="Levels/Day1Part1"]
+texture = SubResource("NoiseTexture2D_bi5im")
+
+[node name="Sprite2D" type="Sprite2D" parent="Levels/Day1Part1/CombinationLock"]
+position = Vector2(0, -242)
+texture = SubResource("PlaceholderTexture2D_qfv05")
+
+[node name="Day1Part1" type="Node" parent="Levels/Day1Part1" node_paths=PackedStringArray("combination_lock")]
+script = ExtResource("2_bi5im")
+combination_lock = NodePath("../CombinationLock")
